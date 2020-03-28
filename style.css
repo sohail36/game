@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    position: fixed;
+    left: 40%;
+    top: 10%;
+    margin-bottom: 30px;
+    color: maroon;
+}
+
+strong{
+    color: white;
+    animation-name:example;
+    animation-duration: .6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    0%   {background-color: goldenrod;  }
+    25%  {background-color: lightyellow;}
+    50%  {background-color: orange;}
+    100% {background-color:  tomato;}
+  }
+  
+
+.box{
+    width: 100vw;
+    height: 100vh;
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3,auto);
+
+}
+
+.cell{
+    width: 100px;
+    height: 100px;
+    background-color:white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+
+.cell:nth-child(3n+3){
+    border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-bottom: none;
+}
+
+.bright{
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    font-weight: 20px;
+    font-size: 80px;
+    color: black;
+}
+
+.cell:hover::before
+{  
+    content: attr(data);
+    text-align: center;
+    padding-left: 20px;
+    justify-content: center;
+    align-content: center;
+    font-weight: 20px;
+    font-size: 80px;
+    opacity: 0.3;
+}
+
+
+
+.faded{
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    font-weight: 20px;
+    font-size: 80px;
+    color: lightgray;
+}
+
+.message{
+    position: fixed;
+    color: white;
+    font-size: 90px;
+    justify-content: center;
+    display:flex;
+    align-items: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.9);
+    display: none;
+}
+
+#but{
+    margin: 20px;
+    font-size: 30px;
+    width: 130px;
+    height: 45px;
+    border-radius: 13px;
+    align-items: center;
+}
+
+.message.show{
+    display: flex;
+}
+
+#but:hover{
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+}
+
